@@ -1,19 +1,36 @@
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navbar = document.querySelector('.navbar');
-const dropdownBtn = document.querySelector('.dropbtn');
-const dropdown = document.querySelector('.dropdown');
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Handle dropdown on mobile
-if (window.innerWidth <= 1024) {
-    dropdownBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
+    // Add click event listener to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add active class to clicked link
+            this.classList.add('active');
+        });
     });
-}
+
+    // Set active class based on current section in view
+    function setActiveNavOnScroll() {
+        const sections = document.querySelectorAll('div[id]');
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if(window.scrollY >= (sectionTop - sectionHeight/3)) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href').slice(1) === section.getAttribute('id')) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', setActiveNavOnScroll);
+}); 
