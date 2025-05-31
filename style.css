@@ -5,95 +5,59 @@
     font-family: "Fira Sans", sans-serif;
 }
 
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.background {
+    background: linear-gradient(135deg, #26262a 0%, #131314 50%, #000000 100%);
+    position:absolute;
     height: 100%;
-    pointer-events: none;
+    width: 100%;
+     }
+
+.blob-outer-container {
+    
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    inset: 0;
+    margin: auto;
+    opacity: 0.5;
+    
 }
 
-.stars::before,
-.stars::after {
-    content: "";
+.blob-inner-container {
+    border-radius: 99999px;
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 
-        50vw 30vh 0 0 rgba(255,255,255,0.8),
-        20vw 60vh 0 0 rgba(255,255,255,0.9),
-        80vw 40vh 0 0 rgba(255,255,255,0.7),
-        10vw 20vh 0 0 rgba(255,255,255,0.8),
-        90vw 70vh 0 0 rgba(255,255,255,0.9),
-        30vw 50vh 0 0 rgba(255,255,255,0.8),
-        70vw 80vh 0 0 rgba(255,255,255,0.7),
-        40vw 10vh 0 0 rgba(255,255,255,0.9),
-        60vw 90vh 0 0 rgba(255,255,255,0.8),
-        85vw 25vh 0 0 rgba(255,255,255,0.7),
-        15vw 75vh 0 0 rgba(255,255,255,0.9),
-        45vw 35vh 0 0 rgba(255,255,255,0.8),
-        75vw 65vh 0 0 rgba(255,255,255,0.7),
-        25vw 85vh 0 0 rgba(255,255,255,0.9),
-        95vw 15vh 0 0 rgba(255,255,255,0.8);
-    animation: twinkle 3s infinite;
+    inset: 0;
+    margin: auto;
+    margin-top: 3rem;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100px;
+    overflow: hidden;
+    background-color: #fff;
+    transform: scale(0.6);
+    filter: blur(100px);
+
 }
 
-.stars::after {
-    animation: twinkle 3s infinite 1s;
-    box-shadow: 
-        45vw 85vh 0 0 rgba(255,255,255,0.8),
-        15vw 35vh 0 0 rgba(255,255,255,0.9),
-        75vw 55vh 0 0 rgba(255,255,255,0.7),
-        5vw 45vh 0 0 rgba(255,255,255,0.8),
-        95vw 25vh 0 0 rgba(255,255,255,0.9),
-        25vw 75vh 0 0 rgba(255,255,255,0.8),
-        65vw 15vh 0 0 rgba(255,255,255,0.7),
-        35vw 95vh 0 0 rgba(255,255,255,0.9),
-        55vw 5vh 0 0 rgba(255,255,255,0.8),
-        80vw 60vh 0 0 rgba(255,255,255,0.7),
-        20vw 40vh 0 0 rgba(255,255,255,0.9),
-        40vw 20vh 0 0 rgba(255,255,255,0.8),
-        70vw 80vh 0 0 rgba(255,255,255,0.7),
-        30vw 70vh 0 0 rgba(255,255,255,0.9),
-        90vw 10vh 0 0 rgba(255,255,255,0.8);
+.blob {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    margin: auto;
+    background: conic-gradient(from 0deg,#08f ,#f60 ,#bbffa1, #ab2666, #09f);
+    animation: spinBob 8s linear infinite;
 }
 
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+@keyframes spinBob{
+    0%{
+        transform: rotate(0deg) scale(2);
     }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+    100%{
+        transform: rotate(360deg) scale(2);
     }
 }
-
-@keyframes twinkle {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #18181c 0%, #0f1420 50%, #21081f 100%);
-    background-size: 400% 400%;
-    background-attachment: fixed;
-    animation: gradient 5s ease infinite;
-    color: #ffffff;
-    position: relative;
-    overflow-x: hidden;
-}
-
 .navbar {
     position: fixed;
     top: 0.8rem;
@@ -177,53 +141,44 @@ body {
     }
 }
 
-.nav-right {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.nav-right .nav-item {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.nav-right .nav-item:hover {
-    color: #ccc;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
-    background-color: white;
-}
-
 .body {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 0 2rem;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+.navspace{
+    padding-top: 8rem;
 }
 
 .firstp {
-    padding-top: 6rem;
-    min-height: 100vh;
+    animation: appear 1s linear;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     text-align: justify;
     line-height: 1.6;
+    height: 34rem;
+    width: 70rem;
+    border: 1px solid #000000;
+    border-radius: 35px;
+    background-color: #00000000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.188);
 }
-
-.firstp div {
     
-    padding: 2rem;
-    padding: 38vh 100vb;
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to{
+        opacity: 1;
+        scale: 1;
+    }
 }
+    
 
