@@ -46,73 +46,6 @@ html{
     cursor: none;
 }
 
-.project{
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s ease;
-}
-
-.show{
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateX(0);
-}
-
-.project:nth-child(2){
-    transition-delay: 250ms;
-}
-
-
-.project:nth-child(3){
-    transition-delay: 500ms;
-}
-
-.innerskill{
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s ease;
-}
-
-.show{
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateX(0);
-}
-
-.innerskill:nth-child(2){
-    transition-delay: 200ms;
-}
-
-.seperation{
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s ease;
-}
-
-.show{
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateX(0);
-}
-
-.seperation:nth-child(2){
-    transition-delay: 200ms;
-}
-
-@keyframes appear{
-    from{
-        opacity: 0;
-        scale: 0.5;
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-}
-
 .background {
     background: linear-gradient(135deg, #26262a 0%, #131314 0%, #000000 25%);
     position:absolute;
@@ -136,15 +69,12 @@ html{
     border-radius: 99999px;
     position: absolute;
     inset: 0;
-    margin: auto;
-    margin-top: 3rem;
+    margin: 3rem auto auto auto;
     width: 100vw;
     height: 100vh;
-    min-height: 100px;
     overflow: hidden;
-    background-color: #fff;
-    transform: scale(0.6);
-    filter: blur(100px);
+    transform: scale(0.7);
+    filter: blur(125px);
 
 }
 
@@ -152,31 +82,20 @@ html{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    inset: 0;
     margin: auto;
     background: conic-gradient(from 0deg,#08f ,#f60 ,#bbffa1, #ab2666, #09f);
     animation: spinBob 8s linear infinite;
 }
 
-@keyframes spinBob{
-    0%{
-        transform: rotate(0deg) scale(2);
-    }
-    100%{
-        transform: rotate(360deg) scale(2);
-    }
-}
 .navbar {
     position:fixed;
     top: 0.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: 23.5rem;
     width: 50%;
-    background-color: #7070705b;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #70707058;
+    z-index: 5;
+    border-radius: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.699);
     opacity: 1 !important;
     backdrop-filter: blur(10px);
 }
@@ -241,15 +160,6 @@ html{
     animation: activeLink 2s linear infinite;
 }
 
-@keyframes activeLink {
-    0% {
-        background-position: -100% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
 .body {
     animation: appear linear;
     animation-range: entry 0 cover 30%;
@@ -257,14 +167,27 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
    }
 
-#one{
+#one,
+#two,
+#three,
+#four{
     height: 0px;
     padding: 0;
     height: 25vh;
+}
+
+#two{
+    height: 20vh;
+}
+
+#three{
+    height: 18vh;
+}
+
+#four{
+    height: 18vh;
 }
 
 .home {
@@ -384,13 +307,6 @@ html{
     color: #ffffffb5;
 }
 
-#two{
-    height: 0px;
-    padding: 0;
-    margin: 0;
-    height: 20vh;
-}
-
 .projects {
     animation: appear 1s linear;
     animation-timeline: view();
@@ -419,6 +335,25 @@ html{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ease;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+.project:nth-child(2){
+    transition-delay: 250ms;
+}
+
+
+.project:nth-child(3){
+    transition-delay: 500ms;
 }
 
 .project:hover{
@@ -535,13 +470,6 @@ html{
     width: 5rem;
 }
 
-#three{
-    height: 0px;
-    padding: 0;
-    margin: 0;
-    height: 18vh;
-}
-
 .skills {
     animation: appear 1s linear;
     animation-timeline: view();
@@ -569,8 +497,21 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ease;
 }
 
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+.innerskill:nth-child(2){
+    transition-delay: 200ms;
+}
 
 .text{
     height: 40%;
@@ -729,13 +670,6 @@ html{
     margin-left: 1.2rem;
 }
 
-#four{
-    height: 0px;
-    padding: 0;
-    margin: 0;
-    height: 18vh;
-}
-
 .contact{
     animation: appear 1s linear;
     animation-timeline: view();
@@ -760,7 +694,21 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ease;
 
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+.seperation:nth-child(2){
+    transition-delay: 200ms;
 }
 
 .seperation:nth-child(2){
@@ -974,6 +922,20 @@ button{
     font-weight: 400;
 }
 
+/* for pop up animations of diff sections */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* for alert animation */
 @keyframes alertSlideIn {
     0% {
         transform: translateX(100%);
@@ -984,7 +946,25 @@ button{
         opacity: 1;
     }
 }
-
+/* for blob animation */
+@keyframes spinBob{
+    0%{
+        transform: rotate(0deg) scale(2);
+    }
+    100%{
+        transform: rotate(360deg) scale(2);
+    }
+}
+/* for active link animation */
+@keyframes activeLink {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+/* for alert slide out animation */
 @keyframes alertSlideOut {
     0% {
         transform: translateX(0);
