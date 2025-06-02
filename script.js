@@ -41,9 +41,28 @@ const observer=new IntersectionObserver((entries)=>{
         if(entry.isIntersecting){
             entry.target.classList.add('show');
         }
+        else{
+            entry.target.classList.remove('show');
+        }
     });
 });
 
 
 const hiddenelements=document.querySelectorAll('.project');
 hiddenelements.forEach((el)=>observer.observe(el));
+
+const observer2=new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        console.log(entry);
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+
+const hiddenelements2=document.querySelectorAll('.innerskill');
+hiddenelements2.forEach((el)=>observer2.observe(el));
