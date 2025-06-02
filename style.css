@@ -953,6 +953,27 @@ button{
     font-weight: 500;
 }
 
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color: #000000;
+}   
+
+.footer-inner{
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-inner p{
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 @keyframes alertSlideIn {
     0% {
         transform: translateX(100%);
