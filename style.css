@@ -535,8 +535,8 @@ p:hover{
     height: 85%;
     width: 40%;
     background-color: #e5dede4f;
-    border-radius: 35px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
+    border-radius: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -733,23 +733,87 @@ p:hover{
 .seperation{
     height: 90%;
     width: 45%;
-    background-color: #00000000;
     border-radius: 35px;
     border: 1px solid #00ff9d;
-    background-color: #00000085;
+    background-color: #00000061;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.seperation:nth-child(2){
+    background-color: #000000;
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
-.seperation{
-    height: 90%;
-    width: 45%;
+.seperation-inner{
+    height: 60%;
+    width: 95%;
     background-color: #00000000;
     border-radius: 35px;
-    border: 1px solid #00ff9d;
-    background-color: #00000085;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
 }
+
+
+.seperation-inner h1{
+    color: #ffffffde;
+    font-size: 2.4rem;
+    font-weight: 900;
+    padding-left: 1rem;
+    margin-top: 3rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.contact-info{
+    height: 4rem;
+    width: 70%;
+    background-color: #00000000;
+    border-radius: 35px;
+    margin-left: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-top: 2.3rem;
+}
+
+.contact-info:hover{
+    scale: 1.05;
+    transition: all 0.3s ease;
+}
+
+.c-img{
+    height: 55px;
+    width: 55px;
+    background-color: #00000000;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #e5dede8e;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
+}
+
+.c-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.c-info{
+    background-color: #00000000;
+    border-radius: 35px;
+    height: 100%;
+    width: 80%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffffb5;
+    display: flex;
+    align-items: center;
+}
+
 /* Styling for Webkit browsers (Chrome, Safari, etc) */
 ::-webkit-scrollbar {
     width: 8px;
