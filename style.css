@@ -3,20 +3,47 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Josefin Sans", sans-serif;
+    cursor: none; /* Hide the default cursor */
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 255, 157, 0.1);
+    border: 2px solid #ffffff8a;
+}
+
+/* Cursor hover effect on links */
+.cursor-dot.cursor-hover {
+    transform: translate(-50%, -50%) scale(2.4);
+}
+
+.cursor-dot-outline.cursor-hover {
+    transform: translate(-50%, -50%) scale(0.8);
 }
 
 html{
     scroll-behavior: smooth;
-}
-
-h1:hover,
-h2:hover,
-h3:hover,
-h4:hover,
-h5:hover,
-h6:hover,
-p:hover{
-    cursor:default;
+    cursor: none;
 }
 
 .project{
@@ -151,6 +178,7 @@ p:hover{
     border-radius: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     opacity: 1 !important;
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -655,11 +683,6 @@ p:hover{
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.bottom a p:hover{
-    cursor: pointer;
 }
 
 .download p{
@@ -835,4 +858,3 @@ p:hover{
     scrollbar-width: thin;
     scrollbar-color: #00ff9d #26262a;
 }
-

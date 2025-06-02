@@ -1,4 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Custom cursor
+    const cursor = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+    // Add hover class on link hover
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+            cursorOutline.classList.add('cursor-hover');
+        });
+        
+        link.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+            cursorOutline.classList.remove('cursor-hover');
+        });
+    });
+
+    window.addEventListener('mousemove', function(e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursor.style.left = `${posX}px`;
+        cursor.style.top = `${posY}px`;
+
+        // Add a slight delay to the outline for a smooth trailing effect
+        setTimeout(() => {
+            cursorOutline.style.left = `${posX}px`;
+            cursorOutline.style.top = `${posY}px`;
+        }, 80);
+    });
+
+    // Hide cursor when mouse leaves the window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        cursorOutline.style.opacity = '0';
+    });
+
+    // Show cursor when mouse enters the window
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorOutline.style.opacity = '1';
+    });
+
     // Get all navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
 
