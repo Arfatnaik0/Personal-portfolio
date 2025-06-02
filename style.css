@@ -757,9 +757,6 @@ html{
     height: 90%;
     width: 45%;
     border-radius: 35px;
-    border: 1px solid #00ff9d;
-    background-color: #00000061;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -907,9 +904,76 @@ button{
     color: #000000;
     margin-top: 4rem;
     border: none;
-
 }
 
+/* Custom Alert Styles */
+.custom-alert {
+    position: fixed;
+    top: 30px;
+    right: -400px; /* Start off-screen */
+    background: linear-gradient(135deg, #000000, #212121);
+    border: 1px solid #ffffff3d;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-alert.show {
+    right: 30px;
+    opacity: 1;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.alert-icon {
+    background: #ffffffc2;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.alert-message {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@keyframes alertSlideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes alertSlideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
 
 /* Styling for Webkit browsers (Chrome, Safari, etc) */
 ::-webkit-scrollbar {

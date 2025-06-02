@@ -20,6 +20,12 @@
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-dot-outline"></div>
+    <div class="custom-alert">
+        <div class="alert-content">
+            <div class="alert-icon">✓</div>
+            <div class="alert-message"></div>
+        </div>
+    </div>
     <div class="background">
     <div class="blob-outer-container">
         <div class="blob-inner-container">
@@ -201,10 +207,20 @@
                 <h4 for="message">Message</h4>
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
             </div>
-            <button type="submit">Send</button>
+            <button type="submit" onclick="sendEmail()">Send</button>
         </div>
     </div>
     </div>  
 </body>
 <script src="script.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "1fci8lLMrteIjawnW",
+      });
+   })();
+</script>
 </html>

@@ -126,3 +126,49 @@ const observer3=new IntersectionObserver((entries)=>{
 
 const hiddenelements3=document.querySelectorAll('.seperation');
 hiddenelements3.forEach((el)=>observer3.observe(el));
+
+function showAlert(message, isSuccess = true) {
+    const alertElement = document.querySelector('.custom-alert');
+    const alertMessage = document.querySelector('.alert-message');
+    const alertIcon = document.querySelector('.alert-icon');
+    
+    // Set the message and icon
+    alertMessage.textContent = message;
+    alertIcon.innerHTML = isSuccess ? '✓' : '✕';
+    alertIcon.style.background = isSuccess ? '#00ff9d' : '#ff3366';
+    
+    // Show the alert
+    alertElement.classList.add('show');
+    
+    // Hide the alert after 3 seconds
+    setTimeout(() => {
+        alertElement.classList.remove('show');
+    }, 3000);
+}
+
+function sendEmail(){
+    var params={
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+    };
+    const serviceId='service_2qper1h';
+    const templateId='template_h5queou';
+
+    emailjs.send(serviceId, templateId, params)
+    .then(
+        res =>{
+            document.getElementById('name').value='';
+            document.getElementById('email').value='';
+            document.getElementById('message').value='';
+            console.log(res);
+            showAlert('Email sent successfully');
+        }
+    )
+    .catch(err =>{
+        console.log(err);
+        showAlert('Email not sent', false);
+    })
+}
+
+
