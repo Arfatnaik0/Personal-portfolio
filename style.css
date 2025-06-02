@@ -58,6 +58,23 @@ p:hover{
     transition-delay: 200ms;
 }
 
+.seperation{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ease;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+.seperation:nth-child(2){
+    transition-delay: 200ms;
+}
+
 @keyframes appear{
     from{
         opacity: 0;
@@ -72,7 +89,7 @@ p:hover{
 .background {
     background: linear-gradient(135deg, #26262a 0%, #131314 0%, #000000 25%);
     position:absolute;
-    height: 300vh;
+    height: 391vh;
     width: 100%;
      }
 
@@ -207,7 +224,6 @@ p:hover{
 
 .body {
     animation: appear linear;
-    animation-timeline: view();
     animation-range: entry 0 cover 30%;
     display: flex;
     flex-direction: column;
@@ -220,8 +236,7 @@ p:hover{
 #one{
     height: 0px;
     padding: 0;
-    margin: 0;
-    height: 18vh;
+    height: 25vh;
 }
 
 .home {
@@ -689,6 +704,51 @@ p:hover{
     width: 40px;
     margin-top: 0.5rem;
     margin-left: 1.2rem;
+}
+
+#four{
+    height: 0px;
+    padding: 0;
+    margin: 0;
+    height: 18vh;
+}
+
+.contact{
+    animation: appear 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    line-height: 1.6;
+    height: 34rem;
+    width: 80rem;
+    border-radius: 35px;
+    background-color: #0000008d;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
+    z-index: 1;
+}
+
+.seperation{
+    height: 90%;
+    width: 45%;
+    background-color: #00000000;
+    border-radius: 35px;
+    border: 1px solid #00ff9d;
+    background-color: #00000085;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.seperation{
+    height: 90%;
+    width: 45%;
+    background-color: #00000000;
+    border-radius: 35px;
+    border: 1px solid #00ff9d;
+    background-color: #00000085;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+
 }
 /* Styling for Webkit browsers (Chrome, Safari, etc) */
 ::-webkit-scrollbar {

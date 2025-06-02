@@ -66,3 +66,19 @@ const observer2=new IntersectionObserver((entries)=>{
 
 const hiddenelements2=document.querySelectorAll('.innerskill');
 hiddenelements2.forEach((el)=>observer2.observe(el));
+
+const observer3=new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        console.log(entry);
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+
+const hiddenelements3=document.querySelectorAll('.seperation');
+hiddenelements3.forEach((el)=>observer3.observe(el));
