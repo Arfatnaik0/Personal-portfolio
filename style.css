@@ -156,9 +156,6 @@ p:hover{
 }
 
 .body {
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,11 +168,10 @@ p:hover{
     height: 0px;
     padding: 0;
     margin: 0;
-    height: 18vh;
+    height: 25vh;
 }
 
 .home {
-    animation: appear 1s linear;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -187,6 +183,7 @@ p:hover{
     background-color: #00000000;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
     margin-top: -2.8rem;
+    z-index: 1;
 }
 
 .photoname{
@@ -294,14 +291,10 @@ p:hover{
     height: 0px;
     padding: 0;
     margin: 0;
-    margin-bottom: 1.1rem;
     height: 18vh;
 }
 
 .projects {
-    animation: appear 1s linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -312,6 +305,7 @@ p:hover{
     border-radius: 35px;
     background-color: #ffffff00;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.193);
+    z-index: 1;
 }
 
 .project{
@@ -449,9 +443,6 @@ p:hover{
 }
 
 .skills {
-    animation: appear 1s linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -462,6 +453,7 @@ p:hover{
     border-radius: 35px;
     background-color: #00000000;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
+    z-index: 1;
 }
 
 .innerskill{
@@ -638,19 +630,6 @@ p:hover{
     margin-top: 0.5rem;
     margin-left: 1.2rem;
 }
-    
-@keyframes appear{
-    from{
-        opacity: 0;
-        scale: 0.5;
-    }
-
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-}
-    
 /* Styling for Webkit browsers (Chrome, Safari, etc) */
 ::-webkit-scrollbar {
     width: 8px;

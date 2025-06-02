@@ -34,3 +34,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener
     window.addEventListener('scroll', setActiveNavOnScroll);
 }); 
+
