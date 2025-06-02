@@ -19,6 +19,39 @@ p:hover{
     cursor:default;
 }
 
+.project{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 10s ease;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+.project:nth-child(2){
+    transition-delay: 200ms;
+}
+
+
+.project:nth-child(3){
+    transition-delay: 400ms;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
 .background {
     background: linear-gradient(135deg, #26262a 0%, #131314 0%, #000000 25%);
     position:absolute;
@@ -156,6 +189,9 @@ p:hover{
 }
 
 .body {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,10 +204,11 @@ p:hover{
     height: 0px;
     padding: 0;
     margin: 0;
-    height: 25vh;
+    height: 18vh;
 }
 
 .home {
+    animation: appear 1s linear;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -291,10 +328,13 @@ p:hover{
     height: 0px;
     padding: 0;
     margin: 0;
-    height: 18vh;
+    height: 20vh;
 }
 
 .projects {
+    animation: appear 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -443,6 +483,9 @@ p:hover{
 }
 
 .skills {
+    animation: appear 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

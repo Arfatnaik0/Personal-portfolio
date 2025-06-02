@@ -35,3 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', setActiveNavOnScroll);
 }); 
 
+const observer=new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        console.log(entry);
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+
+const hiddenelements=document.querySelectorAll('.project');
+hiddenelements.forEach((el)=>observer.observe(el));
