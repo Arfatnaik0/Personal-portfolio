@@ -1107,6 +1107,15 @@ button{
 }
 
 @media screen and (max-width: 768px) {
+    /* Hide custom cursor on mobile screens */
+    * {
+        cursor: auto !important;
+    }
+    
+    .cursor-dot,
+    .cursor-dot-outline {
+        display: none !important;
+    }
     
     .intro-text .one {
         font-size: 3rem;
@@ -1204,6 +1213,7 @@ button{
 
     .form-group {
         margin: auto;
+    }
 
     .custom-alert {
         width: 90%;
@@ -1256,6 +1266,7 @@ button{
 
     .form-group {
         margin: auto;
+    }
 
     .custom-alert {
         width: 90%;
@@ -1265,6 +1276,4 @@ button{
     .custom-alert.show {
         right: 5%;
     }
-}
-}
 }
