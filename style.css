@@ -1177,6 +1177,7 @@ button{
     }
 }
 
+
 @media screen and (max-width: 480px) {
     .navbar a{
         font-size: 0.6rem;
