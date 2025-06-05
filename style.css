@@ -239,6 +239,10 @@ html{
     padding-bottom: 1.5rem;
 }
 
+.name h4{
+    width: 80%;
+}
+
 .socials{
     width: 250px;
     display: flex;
