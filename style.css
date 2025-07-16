@@ -345,7 +345,7 @@ html{
     align-items: center;
     opacity: 0;
     transform: translateX(-100%);
-    transition: all 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .show{
@@ -356,7 +356,6 @@ html{
 .project:nth-child(2){
     transition-delay: 250ms;
 }
-
 
 .project:nth-child(3){
     transition-delay: 500ms;
