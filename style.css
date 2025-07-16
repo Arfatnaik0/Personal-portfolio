@@ -345,7 +345,7 @@ html{
     align-items: center;
     opacity: 0;
     transform: translateX(-100%);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: all 1s ease;
 }
 
 .show{
@@ -353,25 +353,20 @@ html{
     transform: translateX(0);
 }
 
-.project.show:nth-child(2){
+.project:nth-child(2){
     transition-delay: 250ms;
 }
 
-.project.show:nth-child(3){
+.project:nth-child(3){
     transition-delay: 500ms;
 }
 
-/* .project:hover{
+.project:hover{
     height: 90%;
     width: 30%;
     transition: all 0.3s ease;
-} */
-
-.project:hover {
-    transform: scale(1.03);
-    transition-delay: 0s !important;
-    transition-duration: 0.3s;
 }
+
 
 .project:hover .middle a {
     font-size: 1.4rem;
