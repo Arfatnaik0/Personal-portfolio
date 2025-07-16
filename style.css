@@ -353,12 +353,12 @@ html{
     transform: translateX(0);
 }
 
-.project:nth-child(2){
+.project.show:nth-child(2){
     transition-delay: 250ms;
 }
 
 
-.project:nth-child(3){
+.project.show:nth-child(3){
     transition-delay: 500ms;
 }
 
