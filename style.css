@@ -353,6 +353,11 @@ html{
     transform: translateX(0);
 }
 
+.project:nth-child(2),
+.project:nth-child(3) {
+    transition-delay: 0s;
+}
+
 .project.show:nth-child(2){
     transition-delay: 250ms;
 }
