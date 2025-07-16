@@ -361,10 +361,16 @@ html{
     transition-delay: 500ms;
 }
 
-.project:hover{
+/* .project:hover{
     height: 90%;
     width: 30%;
     transition: all 0.3s ease;
+} */
+
+.project:hover {
+    transform: scale(1.03);
+    transition-delay: 0s !important;
+    transition-duration: 0.3s;
 }
 
 .project:hover .middle a {
