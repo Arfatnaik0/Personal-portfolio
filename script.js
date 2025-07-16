@@ -79,13 +79,17 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', setActiveNavOnScroll);
 }); 
 
-const observer=new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        console.log(entry);
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-        else{
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            el.classList.add('show', 'animate-in');
+
+            // Remove animate-in after animation ends
+            setTimeout(() => {
+                el.classList.remove('animate-in');
+            }, 1000); // match your animation duration
+        } else {
             entry.target.classList.remove('show');
         }
     });
