@@ -369,7 +369,7 @@ html{
 }
 
 .project:hover .middle a {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     transition: all 0.3s ease;
 }
 
@@ -402,7 +402,7 @@ html{
 .middle a {
     text-decoration: none;
     color: #ffffffb5;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     width: 100%;
     text-align: center;
