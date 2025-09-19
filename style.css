@@ -331,11 +331,13 @@ html{
     background-color: #ffffff00;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.193);
     z-index: 1;
+    gap: 1rem;
+    padding: 0 1rem;
 }
 
 .project{
     height: 80%;
-    width: 26%;
+    width: 18rem;
     border-radius: 35px;
     background-color: #e5dede4f;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
@@ -361,9 +363,13 @@ html{
     transition-delay: 500ms;
 }
 
+.project.animate-in:nth-child(4) {
+    transition-delay: 750ms;
+}
+
 .project:hover{
     height: 90%;
-    width: 30%;
+    width: 19rem;
     transition: all 0.3s ease;
 }
 
@@ -1045,21 +1051,21 @@ button{
     }
 
     .projects {
-        flex-direction: column;
-        height: auto;
-        padding: 2rem 0;
-        gap: 2rem;
+        width: 95%;
+        height: 30rem;
+        padding: 0 1rem;
+        gap: 1rem;
+        justify-content: space-between;
     }
 
     .project {
-        width: 80%;
-        height: auto;
-        padding: 2rem 0;
+        width: 22%;
+        height: 75%;
     }
 
     .project:hover {
-        width: 85%;
-        height: auto;
+        width: 24%;
+        height: 80%;
     }
 
     .skills {
@@ -1172,6 +1178,25 @@ button{
     .c-info p{
         padding-left: 1rem;
     }
+
+    .projects {
+        width: 95%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .project {
+        width: 45%;
+        height: 20rem;
+    }
+
+    .project:hover {
+        width: 47%;
+        height: 21rem;
+    }
 }
 
 
@@ -1197,8 +1222,26 @@ button{
         width: 90%;
     }
 
-    .project, .innerskill, .seperation {
+    .projects {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .project, .seperation {
         width: 90%;
+        height: 25rem;
+    }
+
+    .innerskill {
+        width: 90%;
+    }
+
+    .project:hover {
+        width: 92%;
+        height: 19rem;
     }
 
     .bottom a p{
@@ -1225,6 +1268,11 @@ button{
     .custom-alert.show {
         right: 5%;
     }
+
+    .skills-used{
+        margin-top: 5%;
+    }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -1250,8 +1298,26 @@ button{
         width: 90%;
     }
 
-    .project, .innerskill, .seperation {
+    .projects {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .project, .seperation {
         width: 90%;
+        height: 16rem;
+    }
+
+    .innerskill {
+        width: 90%;
+    }
+
+    .project:hover {
+        width: 92%;
+        height: 17rem;
     }
 
     .bottom a p{
