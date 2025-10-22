@@ -521,6 +521,7 @@ html{
 
 .innerskill:nth-child(2){
     transition-delay: 200ms;
+    height: 50%;
 }
 
 .text{
