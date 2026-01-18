@@ -277,17 +277,17 @@ html{
 }
 
 .intro-text .one{
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 600;
     padding-top: 3rem;
-    margin-left: -15rem;
+    margin-left: -10rem;
 }
 
 .intro-text .two{
     font-size: 3rem;
     font-weight: 600;
-    margin-left: -5rem;
-    margin-top: -2.5rem;
+    margin-left: 7rem;
+    margin-top: -2.0rem;
 }
 
 .intro-text .three{
@@ -457,16 +457,8 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.lower p{
-    font-size: 1rem;
-    font-weight: 400;
     color: #ffffffb5;
-    height: 10%;
-    width: 100%;
-    text-align:left;
-    padding-left: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .skills-used{
@@ -525,7 +517,7 @@ html{
 }
 
 .text{
-    height: 40%;
+    height: 15%;
     width: 90%;
     font-size: 2rem;
     font-weight: 800;
@@ -549,7 +541,7 @@ html{
 }
 
 .box-inner{
-    height: 50%;
+    height: 60%;
     width: 40%;
     background-color: #00000000;
     border-radius: 35px;
@@ -1123,11 +1115,13 @@ button{
     }
     
     .intro-text .one {
-        font-size: 3rem;
+        font-size: 2rem;
+        margin-left: 0;
     }
 
     .intro-text .two {
         font-size: 2rem;
+        margin-left: 0;
     }
 
     .intro-text .three {
@@ -1193,6 +1187,7 @@ button{
         width: 45%;
         height: 20rem;
     }
+
 
     .project:hover {
         width: 47%;
