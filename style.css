@@ -103,6 +103,11 @@ html{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.699);
     opacity: 1 !important;
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+    transform: translateY(-150%);
 }
 
 .nav-container {

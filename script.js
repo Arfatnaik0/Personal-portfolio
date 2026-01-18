@@ -77,6 +77,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add scroll event listener
     window.addEventListener('scroll', setActiveNavOnScroll);
+
+    // Hide/Show navbar on scroll
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    const scrollThreshold = 100; // minimum scroll distance before hiding
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Only apply hide/show behavior after scrolling past threshold
+        if (scrollTop > scrollThreshold) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide navbar
+                navbar.classList.add('hidden');
+            } else {
+                // Scrolling up - show navbar
+                navbar.classList.remove('hidden');
+            }
+        } else {
+            // Always show navbar at top of page
+            navbar.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 }); 
 
 const observer = new IntersectionObserver((entries) => {
